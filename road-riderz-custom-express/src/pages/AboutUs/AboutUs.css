@@ -1,0 +1,17 @@
+.trainer-div{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.Carousel, .trainer-detail{
+    margin: 20px;
+}
+.tariner-des{
+    margin-top: 50px;
+}
+.trainer{
+    color: crimson;
+    text-shadow: 1px 1px black;
+    margin-top: 20px;
+}

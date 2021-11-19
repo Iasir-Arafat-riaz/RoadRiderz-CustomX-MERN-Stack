@@ -1,0 +1,11 @@
+.status-confirm{
+    background-color: rgb(121, 151, 62);
+    padding: 5px;
+    border-radius: 5px;
+}
+.remove-product {
+    background-color: crimson;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}

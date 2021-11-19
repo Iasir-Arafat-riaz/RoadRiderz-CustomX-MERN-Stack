@@ -1,0 +1,14 @@
+.purchase-img{
+    width: 100%;
+}
+.purchaseButton{
+    
+    padding: 10px;
+   
+    background-color: black;
+    color: rgb(241, 194, 72);
+}
+.purchaseButton:hover{
+    color: white;
+    background-color: darkslategrey;
+}

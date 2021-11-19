@@ -1,0 +1,12 @@
+.login-section{
+    padding-top: 60px;
+    padding-bottom: 200px;
+}
+.login-section input{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.login-button{
+    background-color: rgb(160, 172, 5);
+}

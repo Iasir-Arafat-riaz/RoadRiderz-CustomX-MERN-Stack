@@ -1,0 +1,12 @@
+.custom-product{
+    
+    margin-top: 50px;
+}
+.common-header{
+    padding: 15px;
+    font-weight: 700;
+    color: rgb(3, 49, 49);
+}
+.common-header:hover{
+    color: rgb(212, 99, 99);
+}

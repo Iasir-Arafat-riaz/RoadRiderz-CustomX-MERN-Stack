@@ -1,0 +1,28 @@
+.dashboardNavigation{
+    background-color: rgb(233, 238, 247);
+    /* height: 400px; */
+    /* text-align: left;
+    padding-left: 40px; */
+    
+}
+.dashboardNavigation a{
+    text-decoration: none;
+    color: rgb(75, 74, 71);
+    font-weight: 700;
+    
+    
+}
+.dashboardNavigation span{
+    display: block;
+    margin: 5px;
+    
+}
+.dashboardNavigation a:hover{
+    color: rgb(167, 121, 6);
+}
+.dashBoard-logout{
+    background-color: crimson;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}

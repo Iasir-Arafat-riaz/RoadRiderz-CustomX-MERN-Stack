@@ -1,0 +1,10 @@
+.singleReview{
+    
+    height: 250px;
+    border-radius: 10px;
+    padding: 10px;
+}
+#rev{
+    background-color: rgba(243, 172, 106, 0.849);
+    padding: 20px;
+}

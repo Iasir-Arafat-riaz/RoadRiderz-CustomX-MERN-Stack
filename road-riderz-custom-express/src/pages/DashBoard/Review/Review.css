@@ -1,0 +1,16 @@
+.reviewBtn{
+  margin: 10px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: thistle;
+}
+.reviewSubmit{
+    padding: 2px 10px;
+    border-radius: 5px;
+    background-color: steelblue;
+}
+.review{
+    padding-top: 150px;
+    background-image: url(https://i.ibb.co/WgbrB8R/rrzStunt.png);
+    padding-bottom: 250px;
+}

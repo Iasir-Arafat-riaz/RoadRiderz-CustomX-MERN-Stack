@@ -1,0 +1,39 @@
+.my-order{
+    margin: 20px;
+    border: 3px solid goldenrod;
+    /* background-color: lightcoral; */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.61);
+    background-color: rgba(129, 221, 224, 0.815);
+    
+    
+   
+}
+.only-My-Order{
+    background-image: url(https://i.ibb.co/b5SZtns/bg-1-1-1.png);
+    padding-bottom: 150px;
+}
+
+.my-order-header{
+    padding-top: 30px;
+    color: cornsilk;
+}
+
+.myOrder-Div{
+    margin: 20px;
+    display: grid;
+    padding-bottom: 260px;
+   
+  
+}
+@media only screen and (max-width: 688px){
+.myOrder-Div {
+    grid-template-columns: 1fr;
+}
+}
+@media only screen and (min-width: 689px) {
+    .myOrder-Div{
+        grid-template-columns: repeat(3,1fr);
+    }
+}

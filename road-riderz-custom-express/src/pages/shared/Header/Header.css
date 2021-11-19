@@ -1,0 +1,34 @@
+.header-link{
+    color: white;
+    text-decoration: none;
+    /* line-height: 100px; */
+}
+.company-name{
+    color: rgb(255, 123, 0);
+    background-color: rgb(157, 175, 175);
+    text-shadow:3px 4px 5px #503932
+    ;
+    
+    line-height: 60px;
+    margin-bottom: 0;
+   
+}
+.company-name:hover{
+    background-color:cadetblue;
+    color:white;
+    text-shadow:3px 3px 3px #503932
+}
+.header-info{
+    text-decoration: none;
+    color: black;
+}
+.header-img{
+    width: 40px;
+    border-radius: 25px;
+}
+.company-name img {
+    width: 50px;
+    margin: 2px 10px;
+}
+
+body{background-color:rgb(238, 231, 223);}
