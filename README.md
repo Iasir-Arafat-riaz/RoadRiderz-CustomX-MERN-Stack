@@ -3,5 +3,5 @@
 
 # For FrontEnd using ReactJS & React-BootsTrap component library
 # For BackEnd using NodeJs, ExpressJs
-# For Database using most popular no SQL database MongoDB
+# For Database using most popular no SQL database MongoDB (implement CRUD operation)
 
