@@ -31,3 +31,5 @@ const SinglePayment = () => {
 };
 
 export default SinglePayment;
+
+//-----------Thanks--------
