@@ -21,8 +21,8 @@ const SinglePayment = () => {
 
   
   return (
-    <div>
-      <h1>this is single payment component</h1>
+    <div style={{marginTop:"40px"}}>
+      <h1>Payment with STRIPE</h1>
       <Elements stripe={stripePromise}>
           <CheckoutForm  payOrder={payOrder}></CheckoutForm>
       </Elements>

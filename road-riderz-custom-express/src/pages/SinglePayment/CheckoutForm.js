@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useState } from "react";
+import "./CheckoutForm.css"
 
 const CheckoutForm = ({ payOrder }) => {
   // console.log(payOrder.name)
@@ -37,7 +38,7 @@ const CheckoutForm = ({ payOrder }) => {
     }
   };
   return (
-    <div>
+    <div className="checkout">
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -55,7 +56,7 @@ const CheckoutForm = ({ payOrder }) => {
             },
           }}
         />
-        <button type="submit" disabled={!stripe}>
+        <button className="btn btn-info pay" type="submit" disabled={!stripe}>
           Pay {charge}Tk
         </button>
         <br />
