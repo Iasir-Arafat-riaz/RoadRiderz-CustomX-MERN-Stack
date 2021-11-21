@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CheckoutForm from "./CheckoutForm";
+import "./SinglePayment.css"
 
 
 const stripePromise = loadStripe(
@@ -21,7 +22,7 @@ const SinglePayment = () => {
 
   
   return (
-    <div style={{marginTop:"40px"}}>
+    <div className="singlePayment">
       <h1>Payment with STRIPE</h1>
       {payOrder?.charge &&<Elements stripe={stripePromise}>
           <CheckoutForm  payOrder={payOrder}></CheckoutForm>

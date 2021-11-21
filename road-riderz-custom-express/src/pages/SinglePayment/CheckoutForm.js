@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import "./CheckoutForm.css"
 
 const CheckoutForm = ({ payOrder }) => {
@@ -13,7 +14,7 @@ const CheckoutForm = ({ payOrder }) => {
 
   //for success
   const [success,setSuccess]=useState("")
-
+  const [processing,setProcessing]=useState(false)
   
 
   const [clientSecret,setClientSecret]=useState("")
@@ -39,6 +40,7 @@ console.log(clientSecret);
       // form submission until Stripe.js has loaded.
       return;
     }
+    setProcessing(true)
 
     const card = elements.getElement(CardElement);
     if (card == null) {
@@ -71,14 +73,15 @@ const {paymentIntent, error:intentError} = await stripe.confirmCardPayment(
   },
 );
 if(intentError){
-  setErrorCard(intentError.message)
+  setErrorCard(intentError)
   setSuccess("")
 }
 else{
   setSuccess("Your Payment Processed Successfully")
   console.log(paymentIntent);
+  setProcessing(false)
 }
-
+setProcessing(false)
   };
   return (
     <div className="checkout">
@@ -87,10 +90,10 @@ else{
           options={{
             style: {
               base: {
-                fontSize: "16px",
+                fontSize: "18px",
                 color: "#424770",
                 "::placeholder": {
-                  color: "#aab7c4",
+                  color: "gray",
                 },
               },
               invalid: {
@@ -99,11 +102,13 @@ else{
             },
           }}
         />
-        <button className="pay-btn" type="submit" disabled={!stripe}>
+        
+        {processing?<Spinner animation="border" variant="info" />:<button className="pay-btn" type="submit" disabled={!stripe}>
           Pay {charge}Tk
-        </button>
+        </button>}
         <br />
         <p className="text-danger ">{errorCard.message}</p>
+        <p className="text-success">{success}</p>
         
       </form>
      
