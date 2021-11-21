@@ -23,9 +23,9 @@ const SinglePayment = () => {
   return (
     <div style={{marginTop:"40px"}}>
       <h1>Payment with STRIPE</h1>
-      <Elements stripe={stripePromise}>
+      {payOrder?.charge &&<Elements stripe={stripePromise}>
           <CheckoutForm  payOrder={payOrder}></CheckoutForm>
-      </Elements>
+      </Elements>}
     </div>
   );
 };

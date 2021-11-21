@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CheckoutForm.css"
 
 const CheckoutForm = ({ payOrder }) => {
@@ -9,6 +9,22 @@ const CheckoutForm = ({ payOrder }) => {
   const elements = useElements();
 
   const [errorCard,setErrorCard]=useState("")
+
+  
+
+  const [clientSecret,setClientSecret]=useState("")
+
+  useEffect(()=>{
+   fetch("http://localhost:5000/create-payment-intent",{
+     method:"post",
+     headers:{"content-type":"application/json"},
+     body:JSON.stringify({charge})
+   })
+   .then(res=>res.json())
+   .then(data=>setClientSecret(data.clientSecret))
+  },[charge])
+
+console.log(clientSecret);
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -56,11 +72,11 @@ const CheckoutForm = ({ payOrder }) => {
             },
           }}
         />
-        <button className="btn btn-info pay" type="submit" disabled={!stripe}>
+        <button className="pay-btn" type="submit" disabled={!stripe}>
           Pay {charge}Tk
         </button>
         <br />
-        <p className="text-danger">{errorCard.message}</p>
+        <p className="text-danger ">{errorCard.message}</p>
         
       </form>
      

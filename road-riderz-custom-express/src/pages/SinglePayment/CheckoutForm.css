@@ -3,6 +3,7 @@
     margin: 50px;
     padding: 20px;
 }
-.pay{
-    margin :30px
+.pay-btn{
+    margin :30px;
+    background-color: aqua;
 }
