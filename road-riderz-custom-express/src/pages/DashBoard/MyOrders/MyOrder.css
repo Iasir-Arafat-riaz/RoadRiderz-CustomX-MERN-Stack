@@ -10,6 +10,10 @@
     
    
 }
+.my-order img{
+    width: 50%;
+    border-radius: 20px;
+}
 .only-My-Order{
     background-image: url(https://i.ibb.co/b5SZtns/bg-1-1-1.png);
     padding-bottom: 150px;
@@ -34,6 +38,6 @@
 }
 @media only screen and (min-width: 689px) {
     .myOrder-Div{
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }

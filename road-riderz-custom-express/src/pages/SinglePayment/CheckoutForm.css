@@ -1,9 +1,16 @@
 .checkout{
 
-    margin: 50px;
+    margin: 40px;
     padding: 20px;
 }
 .pay-btn{
-    margin :30px;
-    background-color: aqua;
+    margin :20px;
+    background-color: rgb(6, 201, 201);
+    border-radius: 10px;
+    font-weight: 500;
+    padding:4px 10px;
+}
+.pay-btn:hover{
+    color: whitesmoke;
+    background-color: black;
 }

@@ -45,6 +45,7 @@ const MyOrders = () => {
           {onlyMyOrder.map((orderInfo) => (
             <div className="my-order" key={orderInfo._id}>
               <div>
+                <img src={orderInfo?.image} alt="" />
                 <h4>Name:{orderInfo.name}</h4>
                 <h5>Email : {orderInfo.email}</h5>
                 <h6>Address: {orderInfo.address}</h6>

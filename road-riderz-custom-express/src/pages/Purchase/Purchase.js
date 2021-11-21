@@ -29,7 +29,7 @@ const Purchase = () => {
     const localDate = date.toLocaleDateString();
     data.orderDate = localDate;
     data.status = "pending";
-
+console.log(data);
     // setIsConfirm(true)
     axios
       .post("https://mighty-caverns-68467.herokuapp.com/order", data)
@@ -69,7 +69,7 @@ const Purchase = () => {
         </div>
         <div className="col-md-6 col-sm-12 col-12 purchase-form">
           <h2>Fill form and purchase</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          {image&& <form onSubmit={handleSubmit(onSubmit)}>
             <input
               value={displayName}
               required
@@ -79,7 +79,7 @@ const Purchase = () => {
             <input
               value={email}
               required
-              placeholder="enter your email"
+              // placeholder="enter your email"
               {...register("email")}
             />
             <input
@@ -89,25 +89,33 @@ const Purchase = () => {
             />
             <input
               required
+              value={image}
+              
+              {...register("image")}
+            />
+            <input
+              required
               placeholder="enter your contact number"
               type="number"
               {...register("phone")}
             />
             <input
               required
-              placeholder="enter Customize bike name"
+              value={model}
+              // placeholder="enter Customize bike name"
               {...register("customModel")}
             />
             <input
               required
-              placeholder="enter advance amount"
+              // placeholder="enter advance amount"
+              value={price}
               type="number"
               {...register("charge")}
             />
             <br />
 
             <input className="bg-warning" type="submit" value="Order" />
-          </form>
+          </form>}
         </div>
       </div>
     </div>
