@@ -4,11 +4,15 @@ import "./CheckoutForm.css"
 
 const CheckoutForm = ({ payOrder }) => {
   // console.log(payOrder.name)
-  const { charge } = payOrder;
+  const { charge,displayName,email } = payOrder;
   const stripe = useStripe();
   const elements = useElements();
 
+  //for error
   const [errorCard,setErrorCard]=useState("")
+
+  //for success
+  const [success,setSuccess]=useState("")
 
   
 
@@ -47,11 +51,34 @@ console.log(clientSecret);
 
     if (error) {
       console.log("[error]", error);
+      setSuccess("")
       setErrorCard(error)
     } else {
         setErrorCard("")
       console.log("[PaymentMethod]", paymentMethod);
     }
+//Payment Intent
+const {paymentIntent, error:intentError} = await stripe.confirmCardPayment(
+  clientSecret,
+  {
+    payment_method: {
+      card: card,
+      billing_details: {
+        name: displayName,
+        email:email
+      },
+    },
+  },
+);
+if(intentError){
+  setErrorCard(intentError.message)
+  setSuccess("")
+}
+else{
+  setSuccess("Your Payment Processed Successfully")
+  console.log(paymentIntent);
+}
+
   };
   return (
     <div className="checkout">
