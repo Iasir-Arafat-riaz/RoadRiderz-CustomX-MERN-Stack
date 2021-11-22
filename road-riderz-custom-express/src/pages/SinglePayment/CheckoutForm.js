@@ -5,7 +5,7 @@ import "./CheckoutForm.css"
 
 const CheckoutForm = ({ payOrder }) => {
   // console.log(payOrder.name)
-  const { charge,displayName,email } = payOrder;
+  const { charge,displayName,email,_id } = payOrder;
   const stripe = useStripe();
   const elements = useElements();
 
@@ -80,6 +80,19 @@ else{
   setSuccess("Your Payment Processed Successfully")
   console.log(paymentIntent);
   setProcessing(false)
+const payment={
+  amount:paymentIntent.amount,
+  transiction:paymentIntent.client_secret.split("_secret")[0],
+  created:paymentIntent.created,
+  lastFour:paymentMethod.card.lst4
+}
+  fetch(`http://localhost:5000/myOrder/payment/${_id}`,{
+    method:"put",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify(payment)
+  })
+  .then(res=>res.json())
+  .then(data=>console.log(data))
 }
 setProcessing(false)
   };
@@ -103,12 +116,12 @@ setProcessing(false)
           }}
         />
         
-        {processing?<Spinner animation="border" variant="info" />:<button className="pay-btn" type="submit" disabled={!stripe}>
+        {processing?<Spinner animation="border" variant="info" />:<button className="pay-btn" type="submit" disabled={!stripe||success}>
           Pay {charge}Tk
         </button>}
         <br />
-        <p className="text-danger ">{errorCard.message}</p>
-        <p className="text-success">{success}</p>
+        <p className="text-danger "><b>{errorCard.message}</b></p>
+        <p className="text-success"><b>{success}</b></p>
         
       </form>
      
