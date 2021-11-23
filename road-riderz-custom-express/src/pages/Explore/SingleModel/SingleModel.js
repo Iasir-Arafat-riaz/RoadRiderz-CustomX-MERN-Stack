@@ -16,7 +16,9 @@ const SingleModel = (props) => {
         <div>
              <Col >
         <Card className="m-2">
-          <Card.Img className="purchase-img" variant="top" src={image} />
+          
+          <Card.Img className="purchase-img" variant="top" src={`data:image/png;base64,${image}`} />
+         
           <Card.Body>
             <Card.Title>
               {" "}

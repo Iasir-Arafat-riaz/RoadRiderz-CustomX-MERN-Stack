@@ -30,20 +30,47 @@ const Purchase = () => {
     data.orderDate = localDate;
     data.status = "pending";
 console.log(data);
-    // setIsConfirm(true)
-    axios
-      .post("https://mighty-caverns-68467.herokuapp.com/order", data)
-      .then((res) => {
-        console.log(res.status);
-        if (res.status === 200) {
-          //     <Alert  variant="success">
-          //     This is a  alert—check it out!
-          //   </Alert>
-          // alert("order place successfully")
-          Swal.fire("order place successfully");
+
+const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("email", data.email );
+    formData.append("orderDate", data.orderDate);
+    formData.append("charge", data.charge);
+    formData.append("address", data.address);
+    formData.append("customModel", data.customModel);
+    formData.append("phone", data.phone);
+    formData.append("status", data.status);
+    formData.append("image", data.image);
+
+
+fetch("https://mighty-caverns-68467.herokuapp.com/order", {
+      method: "post",
+     
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {console.log(result)
+      if(result.insertedId){
+        Swal.fire("Order Place Successfully");
           reset();
-        }
+      }
       });
+
+
+
+    // axios
+    //   .post("http://localhost:5000/order", data)
+    //   .then((res) => {
+    //     console.log(res.status);
+    //     if (res.status === 200) {
+    //       //     <Alert  variant="success">
+    //       //     This is a  alert—check it out!
+    //       //   </Alert>
+    //       // alert("order place successfully")
+    //       Swal.fire("order place successfully");
+    //       reset();
+    //     }
+    //   });
 
     // console.log(data);
   };
@@ -54,7 +81,7 @@ console.log(data);
         <div className="col-md-6 col-sm-12 col-12">
           <div className="prodDetail">
             <h4>Custom Model: X-100{prod_id}</h4>
-            <img src={image} alt=""></img>
+            <img  src={`data:image/png;base64,${image}`} alt=""></img>
             <h3>{model}</h3>
             <h5>
               <b>Original Model: {origin}</b>
