@@ -3,3 +3,12 @@
     text-shadow: 1px 1px black;
     margin-top: 20px;
 }
+.stunt{
+    margin: 30px;
+    margin-bottom: 200px;
+}
+.stunt img{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+}
