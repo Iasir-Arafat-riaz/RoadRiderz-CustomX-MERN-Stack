@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Falcon.css"
 
 const Falcon = () => {
     return (
