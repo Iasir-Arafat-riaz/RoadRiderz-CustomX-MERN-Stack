@@ -18,7 +18,7 @@ const Purchase = () => {
   const { id } = useParams();
   // console.log(id);
   useEffect(() => {
-    fetch(`https://mighty-caverns-68467.herokuapp.com/products/${id}`)
+    fetch(`https://polar-thicket-32932.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setPurchaseProduct(data));
   }, []);
@@ -43,7 +43,7 @@ const formData = new FormData();
     formData.append("image", data.image);
 
 
-fetch("https://mighty-caverns-68467.herokuapp.com/order", {
+fetch("https://polar-thicket-32932.herokuapp.com/order", {
       method: "post",
      
       body: formData,

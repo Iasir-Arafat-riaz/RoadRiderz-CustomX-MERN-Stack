@@ -5,7 +5,7 @@ import Product from './Product/Product';
 const ManageProducts = () => {
     const [manageProducts, setManageProducts] = useState([]);
   useEffect(() => {
-    fetch("https://mighty-caverns-68467.herokuapp.com/products")
+    fetch("https://polar-thicket-32932.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setManageProducts(data));
   }, []);

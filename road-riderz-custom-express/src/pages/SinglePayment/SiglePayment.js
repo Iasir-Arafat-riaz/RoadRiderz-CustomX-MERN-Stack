@@ -14,7 +14,7 @@ const SinglePayment = () => {
   const [payOrder, setPayOrder] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://mighty-caverns-68467.herokuapp.com/myOrder/${id}`)
+    fetch(`https://polar-thicket-32932.herokuapp.com/myOrder/${id}`)
       .then((res) => res.json())
       .then((data) => setPayOrder(data));
   }, []);

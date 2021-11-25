@@ -22,7 +22,7 @@ const AddProduct = () => {
 
     //   const dataobject ={bookingInfo:     }
 
-    fetch("https://mighty-caverns-68467.herokuapp.com/products", {
+    fetch("https://polar-thicket-32932.herokuapp.com/products", {
       method: "post",
       body: formData,
     })
@@ -37,7 +37,7 @@ const AddProduct = () => {
     //Normal way
 
     // axios
-    //   .post("https://mighty-caverns-68467.herokuapp.com/products", data)
+    //   .post("https://polar-thicket-32932.herokuapp.com/products", data)
     //   .then((res) => {
     //     console.log(res.status);
     //     if (res.status === 200) {

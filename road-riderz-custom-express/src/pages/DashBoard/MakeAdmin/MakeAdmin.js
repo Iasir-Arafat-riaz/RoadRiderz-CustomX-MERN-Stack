@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   const createAdmin = (event) => {
     const user ={email}
     console.log(user);
-    fetch("https://mighty-caverns-68467.herokuapp.com/users/admin", {
+    fetch("https://polar-thicket-32932.herokuapp.com/users/admin", {
       method: "put",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

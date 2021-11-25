@@ -20,7 +20,7 @@ const CheckoutForm = ({ payOrder }) => {
   const [clientSecret,setClientSecret]=useState("")
 
   useEffect(()=>{
-   fetch("https://mighty-caverns-68467.herokuapp.com/create-payment-intent",{
+   fetch("https://polar-thicket-32932.herokuapp.com/create-payment-intent",{
      method:"post",
      headers:{"content-type":"application/json"},
      body:JSON.stringify({charge})
@@ -86,7 +86,7 @@ const payment={
   created:paymentIntent.created,
   lastFour:paymentMethod.card.lst4
 }
-  fetch(`https://mighty-caverns-68467.herokuapp.com/myOrder/payment/${_id}`,{
+  fetch(`https://polar-thicket-32932.herokuapp.com/myOrder/payment/${_id}`,{
     method:"put",
     headers:{"content-type":"application/json"},
     body:JSON.stringify(payment)

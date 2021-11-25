@@ -9,7 +9,7 @@ const removeProduct=()=>{
     const confirm= window.confirm("Are you sure...Delete this product ")
     // console.log("remove now",_id)
     if (confirm){
-        fetch(`https://mighty-caverns-68467.herokuapp.com/products/${_id}`,{method:"delete"})
+        fetch(`https://polar-thicket-32932.herokuapp.com/products/${_id}`,{method:"delete"})
     .then(res=>res.json())
     .then(data=>{console.log(data)
     if(data.deletedCount){

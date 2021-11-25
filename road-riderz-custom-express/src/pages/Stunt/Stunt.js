@@ -1,9 +1,10 @@
 import React from 'react';
+import "./Stunt.css"
 
 const Stunt = () => {
     return (
-        <div>
-            <h1>RRz Stunt team is here</h1>
+        <div className="stunt-header">
+            <h1>RRz Stunt Team </h1>
         </div>
     );
 };

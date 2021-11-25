@@ -15,3 +15,44 @@
     text-shadow: 1px 1px black;
     margin-top: 20px;
 }
+.about-header{
+    color: rgb(15, 173, 152);
+    text-shadow: 1px 1px black;
+    margin-top: 20px;
+}
+.social a{
+    margin: 11px;
+    text-decoration: none;
+    /* background-color: rgb(241, 149, 28); */
+    background-image: linear-gradient(25deg,rgba(235, 213, 16, 0.877), rgba(238, 81, 9, 0.73));
+    padding: 7px 13px;
+    border-radius: 10px;
+    color: rgb(19, 110, 214);
+    box-shadow: 4px 4px  rgb(170, 166, 166);
+    font-weight: 700;
+   
+}
+.social a:hover{
+    margin: 11px;
+    text-decoration: none;
+    /* background-color: rgb(241, 149, 28); */
+    background-image: linear-gradient(25deg,rgba(25, 247, 180, 0.877), rgba(231, 28, 55, 0.73));
+ 
+    border-radius: 10px;
+    color: rgb(6, 24, 44);
+    box-shadow: 4px 4px  rgb(170, 166, 166);
+   
+   
+}
+
+@media only screen and (max-width: 600px) {
+    .trainer-div{
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        
+    }
+    .textAlign{
+        text-align: justify;
+    }
+}

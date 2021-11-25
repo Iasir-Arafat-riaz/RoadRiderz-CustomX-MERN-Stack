@@ -133,7 +133,7 @@ const useFirebase = () => {
   //check admin
 useEffect(()=>{
   // setIsLoading(true)
-  fetch(`https://mighty-caverns-68467.herokuapp.com/users/${user.email}`)
+  fetch(`https://polar-thicket-32932.herokuapp.com/users/${user.email}`)
   .then(res=>res.json())
   .then(data=>{
     setAdmin(data.admin)
@@ -145,7 +145,7 @@ useEffect(()=>{
   const saveUser=(email,displayName,method)=>{
 
     const user ={email,displayName}
-    fetch("https://mighty-caverns-68467.herokuapp.com/users",
+    fetch("https://polar-thicket-32932.herokuapp.com/users",
     {method:method,
   headers:{"content-type":"application/json"},
   body: JSON.stringify(user)

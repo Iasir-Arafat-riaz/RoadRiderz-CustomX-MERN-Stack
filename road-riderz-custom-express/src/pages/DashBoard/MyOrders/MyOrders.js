@@ -11,7 +11,7 @@ const MyOrders = () => {
   const email = user.email;
   //find all my orders
   useEffect(() => {
-    const url = `https://mighty-caverns-68467.herokuapp.com/myOrder`;
+    const url = `https://polar-thicket-32932.herokuapp.com/myOrder`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyOrder(data));
@@ -23,7 +23,7 @@ const MyOrders = () => {
   const cancelOrder = (id) => {
     const confirmation = window.confirm("Are you sure delete this order");
     if (confirmation) {
-      fetch(`https://mighty-caverns-68467.herokuapp.com/myOrder/${id}`, {
+      fetch(`https://polar-thicket-32932.herokuapp.com/myOrder/${id}`, {
         method: "delete",
       })
         .then((res) => res.json())

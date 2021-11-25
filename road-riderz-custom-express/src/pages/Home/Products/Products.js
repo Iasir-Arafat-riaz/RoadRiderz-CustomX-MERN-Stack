@@ -7,7 +7,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://mighty-caverns-68467.herokuapp.com/products")
+    fetch("https://polar-thicket-32932.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

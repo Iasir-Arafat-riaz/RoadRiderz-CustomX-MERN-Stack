@@ -38,7 +38,7 @@ console.log(rating);
         // e.preventDefault()
       const commentObject = {name:user.displayName, email:user.email,cmnt:userComment,rating:rating}
       console.log(commentObject)
-      axios.post("https://mighty-caverns-68467.herokuapp.com/reviews", commentObject).then((res) => {
+      axios.post("https://polar-thicket-32932.herokuapp.com/reviews", commentObject).then((res) => {
         console.log(res.status);
         if (res.status === 200) {
             setUserComment("")

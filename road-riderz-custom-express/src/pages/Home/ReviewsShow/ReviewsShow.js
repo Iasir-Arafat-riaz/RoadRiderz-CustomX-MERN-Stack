@@ -5,7 +5,7 @@ import SingleReview from './SingleReview/SingleReview';
 const ReviewsShow = () => {
     const [reviews,setReviews]=useState([])
     useEffect(()=>{
-        fetch("https://mighty-caverns-68467.herokuapp.com/reviews")
+        fetch("https://polar-thicket-32932.herokuapp.com/reviews")
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[])

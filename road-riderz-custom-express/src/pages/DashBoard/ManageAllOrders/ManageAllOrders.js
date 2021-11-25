@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
   const email = user.email;
   //find all my orders
   useEffect(() => {
-    const url = `https://mighty-caverns-68467.herokuapp.com/myOrder`;
+    const url = `https://polar-thicket-32932.herokuapp.com/myOrder`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
@@ -30,7 +30,7 @@ const ManageAllOrders = () => {
     setStatus("confirm");
     const updateStatus = { status: status };
     console.log(status, orderId);
-    fetch(`https://mighty-caverns-68467.herokuapp.com/manageOrder/${orderId}`, {
+    fetch(`https://polar-thicket-32932.herokuapp.com/manageOrder/${orderId}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updateStatus),
@@ -48,7 +48,7 @@ const ManageAllOrders = () => {
       const confirm = window.confirm("Please Confirm before Delete")
     console.log("delete", remID);
     if(confirm){
-        fetch(`https://mighty-caverns-68467.herokuapp.com/manageOrder/${remID}`,{method:"delete"})
+        fetch(`https://polar-thicket-32932.herokuapp.com/manageOrder/${remID}`,{method:"delete"})
     .then(res=>res.json())
     .then(data=>{
         console.log(data.deletedCount)
