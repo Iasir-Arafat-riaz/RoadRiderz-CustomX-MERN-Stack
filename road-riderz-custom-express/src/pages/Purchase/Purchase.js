@@ -58,21 +58,7 @@ fetch("https://mighty-caverns-68467.herokuapp.com/order", {
 
 
 
-    // axios
-    //   .post("http://localhost:5000/order", data)
-    //   .then((res) => {
-    //     console.log(res.status);
-    //     if (res.status === 200) {
-    //       //     <Alert  variant="success">
-    //       //     This is a  alert—check it out!
-    //       //   </Alert>
-    //       // alert("order place successfully")
-    //       Swal.fire("order place successfully");
-    //       reset();
-    //     }
-    //   });
-
-    // console.log(data);
+    
   };
 
   return (
