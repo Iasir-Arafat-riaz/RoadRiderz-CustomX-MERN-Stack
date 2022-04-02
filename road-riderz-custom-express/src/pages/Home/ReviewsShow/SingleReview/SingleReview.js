@@ -3,16 +3,23 @@ import { Card, Col } from "react-bootstrap";
 import "./SingleReview.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalf, faUser } from "@fortawesome/free-solid-svg-icons";
-
+import { useEffect } from "react";
+import Aos from "aos";
+import { AOS } from "aos";
+import "aos/dist/aos.css";
 const SingleReview = (props) => {
   const { name, email, rating, cmnt } = props.review;
   const comment = cmnt.slice(0, 40);
   const cmommentFig = `${comment}.....`;
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
-    <div>
+    <div >
       <Col>
-        <Card id="rev" className="singleReview">
+        <Card id="rev" className="singleReview m-2" data-aos="flip-down">
           <Card.Body>
             <Card.Title>
               {" "}

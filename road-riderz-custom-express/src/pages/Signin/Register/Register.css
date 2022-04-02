@@ -3,6 +3,9 @@
     padding: 5px 10px;
     border-radius: 5px;
 }
+.register-section{
+    padding-bottom: 150px;
+}
 
 .register-input{
    margin-top: 40px;}

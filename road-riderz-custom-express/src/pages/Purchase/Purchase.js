@@ -6,9 +6,11 @@ import "./Purchase.css";
 import { useAuth } from "../../hooks/useAuth";
 import { Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Loading from "../shared/Loading/Loading";
 
 const Purchase = () => {
   //receive data from useAuth
+  const [load, setLoad]=useState(true)
   const { user } = useAuth();
 
   const { email, displayName } = user;
@@ -18,9 +20,14 @@ const Purchase = () => {
   const { id } = useParams();
   // console.log(id);
   useEffect(() => {
+    setLoad(true)
     fetch(`https://polar-thicket-32932.herokuapp.com/products/${id}`)
       .then((res) => res.json())
-      .then((data) => setPurchaseProduct(data));
+      .then((data) => {
+        setPurchaseProduct(data)
+        setLoad(false)
+      });
+      
   }, []);
   const { model, image, origin, prod_id, detail, price } = purchaseProduct;
 
@@ -60,6 +67,10 @@ fetch("https://polar-thicket-32932.herokuapp.com/order", {
 
     
   };
+
+  if(load){
+    return (<Loading/>)
+  }
 
   return (
     <div className="purchase">
