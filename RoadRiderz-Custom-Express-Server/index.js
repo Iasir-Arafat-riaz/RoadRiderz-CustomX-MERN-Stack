@@ -34,20 +34,25 @@ async function run() {
     // create a document to insert -Add new Products
     app.post("/products", async (req, res) => {
       console.log("body", req.body);
-      console.log("files", req.files);
-      const prod_id = req.body.prod_id;
-      const model = req.body.model;
-      const detail = req.body.detail;
-      const price = req.body.price;
-      const origin = req.body.origin;
+      // console.log("files", req.files);
+      // const prod_id = req.body.prod_id;
+      // const model = req.body.model;
+      // const detail = req.body.detail;
+      // const price = req.body.price;
+      // const origin = req.body.origin;
 
-      const pic = req.files.image;
-      const picData = pic.data;
-      const encodePic = picData.toString("base64")
-      const imageBuffer = Buffer.from(encodePic,"base64")
-      // const query = req.body;
-      const products= {prod_id,model,detail,price,origin,image:imageBuffer}
-      console.log(products);
+      // const pic = req.files.image;
+      // const picData = pic.data;
+      // const encodePic = picData.toString("base64")
+      // const imageBuffer = Buffer.from(encodePic,"base64")
+      // // const query = req.body;
+      // const products= {prod_id,model,detail,price,origin,image:imageBuffer}
+      // console.log(products);
+      // const result = await allProducts.insertOne(products);
+      // res.json(result);
+
+      //normal way
+      const products= req.body;
       const result = await allProducts.insertOne(products);
       res.json(result);
     });
