@@ -6,7 +6,7 @@ require("dotenv").config();
 const ObjectId = require("mongodb").ObjectId;
 const app = express();
 const port = process.env.PORT || 5000;
-// /yea.
+
 //fOR Stripe (payment get-way)
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 // console.log(stripe);
